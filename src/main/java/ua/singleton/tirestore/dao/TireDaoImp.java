@@ -26,10 +26,14 @@ public class TireDaoImp implements TireDao {
         return sessionFactory.getCurrentSession();
     }
 
+    @Override
+    public int saveTire(Tire tire) {
+        return (int) currentSession().save(tire);
+    }
 
     @Override
-    public void saveTire(Tire tire) {
-        currentSession().saveOrUpdate(tire);
+    public void updateTire(Tire tire) {
+        currentSession().update(tire);
     }
 
     @Override
@@ -48,8 +52,7 @@ public class TireDaoImp implements TireDao {
     }
 
     @Override
-    public void deleteTire(int id) {
-        Tire tire = currentSession().byId(Tire.class).load(id);
+    public void deleteTire(Tire tire) {
         currentSession().delete(tire);
     }
 }

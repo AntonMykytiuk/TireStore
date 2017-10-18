@@ -22,6 +22,9 @@
         .myinbold {
             font-weight: 600;
         }
+        .image-margin {
+            margin: 5px;
+        }
     </style>
 </head>
 
@@ -33,7 +36,6 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3>Tires</h3>
-
                 </div>
                 <div class="panel panel-body">
                     <table class="table">
@@ -76,10 +78,13 @@
                                             <h5 class="myinbold">${tireList.speedIndex}</h5>
                                         </div>
                                     </td>
-                                    <td class="col-sm-6">
-
+                                    <td class="col-sm-4 col-sm-offset-1">
+                                            <div class="image-margin text-center">
+                                                <img src="/images/tire_image_${tireList.id}.${tireList.imageExtension}"
+                                                     class="img-responsive" alt="no image" width="200px" height="120px" />
+                                            </div>
                                     </td>
-                                    <td class="col-sm-2">
+                                    <td class="col-sm-2 col-sm-offset-1">
                                         <div class="mybutton">
                                             <a href=<c:url value="/modify/${tireList.id}" />>
                                                 <button class="btn btn-default">Modify</button>

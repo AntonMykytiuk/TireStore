@@ -26,11 +26,11 @@ DROP TABLE IF EXISTS `tires`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tires` (
   `tire_id` int(11) NOT NULL AUTO_INCREMENT,
-  `width` smallint(4) NOT NULL,
+  `width` tinyint(4) NOT NULL,
   `height` tinyint(2) NOT NULL,
   `diameter` tinyint(2) NOT NULL,
   `speed_index` enum('J','K','L','M','N','P','Q','R','S','T','U','H','V','VR','W','Y','ZR') NOT NULL,
-  `picture` blob,
+  `image_extension` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`tire_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-11 10:45:45
+-- Dump completed on 2017-10-18 10:26:29

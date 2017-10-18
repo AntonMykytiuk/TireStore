@@ -4,6 +4,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -31,8 +32,11 @@ public class Tire implements Serializable {
     @Column(name = "speed_index")
     private String speedIndex;
 
-    @Column
-    private byte [] picture;
+    @Column(name = "image_extension")
+    private String imageExtension;
+
+    @Transient
+    private MultipartFile file;
 
 
     public int getId() {
@@ -75,14 +79,21 @@ public class Tire implements Serializable {
         this.speedIndex = speedIndex;
     }
 
-    public byte[] getPicture() {
-        return picture;
+    public String getImageExtension() {
+        return imageExtension;
     }
 
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
+    public void setImageExtension(String imageExtension) {
+        this.imageExtension = imageExtension;
     }
 
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
 
     @Override
     public String toString() {
